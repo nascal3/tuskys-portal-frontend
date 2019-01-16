@@ -1,0 +1,20 @@
+@import "./sass/main";
+
+.page {
+  display: flex;
+  min-height: 100vh;
+
+  &_leftNav {
+    display: flex;
+    flex: 0 0 17%;
+    flex-direction: column;
+    background-color: $main-grey;
+    justify-content: space-between;
+  }
+
+  &_mainSection {
+    flex: 1;
+    background-size: cover;
+    background: linear-gradient(to bottom, $light-background-yellow, $white) no-repeat;
+  }
+}

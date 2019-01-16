@@ -1,0 +1,17 @@
+.topSection {
+  position: fixed;
+  top: 0;
+  width: 83%;
+  right: 0;
+  z-index: 2;
+}
+
+.mainSection {
+  position: relative;
+  top: 7rem;
+  //border: solid 1px green;
+  padding: 2rem 1.5rem ;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 86vh;
+}

@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../src/app/sass/colors";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // (1 rem = 10px)  10px/16px
+
+  //@media only screen and (max-width: $bp-large) {
+  //  font-size: 50%;
+  //}
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 50%;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:linear-gradient(to bottom, $light-background-yellow, $white) no-repeat;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $main-grey;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $main-grey;
+  }
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: $white;
+  //background: linear-gradient(to right bottom, $light-background-yellow, $white) no-repeat;
+  min-height: 100vh;
+}
+
+
+

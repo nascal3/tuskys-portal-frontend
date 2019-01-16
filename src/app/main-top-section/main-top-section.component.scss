@@ -1,0 +1,18 @@
+@import "../sass/main";
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: $light-background-yellow;
+  max-height: 7rem;
+
+  &_title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: $main-grey;
+    justify-content: center;
+    align-items: center;
+  }
+
+}

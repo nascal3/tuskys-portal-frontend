@@ -1,0 +1,31 @@
+@import "../sass/main";
+
+.topBar_profile {
+  display: flex;
+  color: $main-grey;
+  justify-content: center;
+  align-items: center;
+
+  &--username {
+    font-size: 1.3rem;
+    margin-right: 7px;
+  }
+
+  &--image {
+    margin-right: 7px;
+    margin-left: 7px;
+    padding: 2px;
+    border: 1px solid $main-grey;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &--menu {
+    //font-size: 1.3rem;
+    //margin-right: 7px;
+  }
+
+
+}
