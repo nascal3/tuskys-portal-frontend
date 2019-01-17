@@ -7,9 +7,7 @@
   &_leftNav {
     display: flex;
     flex: 0 0 17%;
-    flex-direction: column;
     background-color: $main-grey;
-    justify-content: space-between;
   }
 
   &_mainSection {
