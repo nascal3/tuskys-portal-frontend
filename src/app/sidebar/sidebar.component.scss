@@ -1,0 +1,114 @@
+@import "../sass/main";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 126%;
+
+  &_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 1rem 0;
+
+    & img {
+      width: 140px;
+    }
+
+    &--line {
+      position: relative;
+      width: 85%;
+      border-bottom: solid 1px $light-grey2;
+      top: 1rem;
+    }
+
+    &--image {
+      max-width: 100%;
+    }
+  }
+
+  &_legal {
+    width: 100%;
+    text-align: center;
+    color: lighten($black, 80%);
+    font-size: 1.1rem;
+    font-weight: 300;
+
+    & div  {
+      margin-bottom: 1.6rem;
+
+      & span {
+        color: $main-grey;
+        background-color: $menu-txt-grey;
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        padding: 1px 5px;
+        font-weight: 700;
+        font-size: 9px;
+      }
+
+      & a {
+        color: $menu-txt-grey;
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+
+.sideMenu {
+  font-size: 1.2rem;
+  font-weight: 300;
+  list-style: none;
+  margin-top: 3.5rem;
+  color: $menu-txt-grey;
+  width: 100%;
+
+  &_item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 5.8rem;
+    //border: solid 1px white;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover,
+    &:active {
+      color: $dark-yellow;
+      background-color: $light-grey2;
+      width: 125%;
+      box-shadow: 8px 1px 47px -5px rgba(0,0,0,0.75);
+    }
+
+    & img {
+      width: 2.7rem;
+      overflow: hidden;
+      margin-right: 2rem;
+    }
+
+    &--icon {
+      max-width: 100%;
+      fill: $menu-txt-grey;
+
+      &:hover {
+        //background-color: red;
+        //filter: invert(82%) sepia(41%) saturate(3836%) hue-rotate(2deg) brightness(106%) contrast(98%);
+        fill: darkslateblue;
+        //fill: $dark-yellow;
+      }
+    }
+
+    &--text {
+      width: 10rem;
+    }
+  }
+}
