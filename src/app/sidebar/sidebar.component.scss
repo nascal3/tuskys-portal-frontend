@@ -96,8 +96,9 @@
     }
 
     &--icon {
-      max-width: 100%;
+      width: 3rem;
       fill: $menu-txt-grey;
+      margin-right: 2rem;
 
       &:hover {
         //background-color: red;

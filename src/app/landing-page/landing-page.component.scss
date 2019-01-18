@@ -31,6 +31,25 @@
       align-items: center;
       padding-top: 2.6rem;
       border-radius: 10px;
+      position: relative;
+    }
+
+    &--iconAddon {
+      position: absolute;
+      background-color: $light-background-yellow;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 15.5rem;
+      top: 2.5rem;
+
+      &-icon {
+        fill: $white;
+        width: 2.5rem;
+      }
     }
 
     &--iconBorder {
@@ -49,7 +68,9 @@
       align-items: center;
       width: 11rem;
       height: 11rem;
+      padding: 1.2rem;
       overflow: hidden;
+      fill: $white;
       background-color: green;
       border-radius: 50%;
       cursor: pointer;
