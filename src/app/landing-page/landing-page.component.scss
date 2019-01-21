@@ -21,9 +21,23 @@
 
   &_card {
     overflow: hidden;
-    width: 27rem;
+    width: 26rem;
     min-height: 29rem;
     margin: 1rem 3rem;
+
+    @media (max-width: $bp-largest ) {
+      width: 24rem;
+    }
+
+    @media (max-width: $bp-large ) {
+      width: 20rem;
+    }
+
+    @media (max-width: $bp-medium ) {
+      width: 16rem;
+      min-height: 23.5rem;
+      margin: 1rem 1.5rem;
+    }
 
     &--style {
       display: flex;
@@ -46,6 +60,18 @@
       left: 15.5rem;
       top: 2.5rem;
 
+      @media (max-width: $bp-largest ) {
+        left: 14.5rem;
+      }
+
+      @media (max-width: $bp-large ) {
+        left: 13rem;
+      }
+
+      @media (max-width: $bp-medium ) {
+        left: 9.7rem;
+      }
+
       &-icon {
         fill: $white;
         width: 2.5rem;
@@ -60,6 +86,11 @@
       height: 12rem;
       border-radius: 50%;
       border: solid 2px $light-background-yellow;
+
+      @media (max-width: $bp-medium ) {
+        width: 8rem;
+        height: 8rem;
+      }
     }
 
     &--icon {
@@ -74,6 +105,11 @@
       background-color: green;
       border-radius: 50%;
       cursor: pointer;
+
+      @media (max-width: $bp-medium ) {
+        width: 7rem;
+        height: 7rem;
+      }
 
       & img {
         max-width: 56%;
@@ -90,6 +126,14 @@
       height: 6rem;
       overflow: hidden;
 
+      @media (max-width: $bp-large ) {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: $bp-medium ) {
+        font-size: 1.1rem;
+      }
+
       & span {
         position: absolute;
         text-align: center;
@@ -97,6 +141,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @media (max-width: $bp-medium ) {
+          line-height: 1.4rem;
+        }
       }
     }
 
@@ -105,7 +153,6 @@
       font-size: 1.6rem;
       font-weight: 800;
       color: $main-grey;
-      //text-transform: uppercase;
       cursor: pointer;
       border-radius: 27px;
       overflow: hidden;
@@ -113,11 +160,27 @@
       margin-bottom: 1rem !important;
       transition: all .2s;
 
+      @media (max-width: $bp-large ) {
+        font-size: 1.5rem;
+      }
+
       & > * {
         display: inline-block;
         height: 4rem;
         width: 24rem;
         transition: all .2s;
+
+        @media (max-width: $bp-largest ) {
+          width: 20rem;
+        }
+
+        @media (max-width: $bp-large ) {
+          width: 15rem;
+        }
+
+        @media (max-width: $bp-medium ) {
+          width: 13rem;
+        }
       }
 
       &:hover {
