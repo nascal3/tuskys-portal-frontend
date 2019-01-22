@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-login-leave-portal',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-leave-portal.component.scss']
 })
 export class LoginLeavePortalComponent implements OnInit {
+  leavePortalLoaded: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.leavePortalLoaded = "Leave";
   }
 
+  onSubmit(f: NgForm) {
+    console.log(f);
+  }
 }
