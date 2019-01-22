@@ -4,17 +4,52 @@
   .mainSection {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     align-content: space-between;
     top: 7rem;
+    min-height: 75%;
     padding: 2rem 1.5rem;
     overflow-y: auto;
     overflow-x: hidden;
 
+    &__icon {
+      position: absolute;
+      top: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      border: 1px solid $dark-yellow;
+      width: 13rem;
+      height: 13rem;
+      padding: 0 4px;
+      background-color: $white;
+      border-radius: 50%;
+
+      &-background {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $main-green;
+        width: 13rem;
+        height: 12rem;
+        border-radius: 50%;
+      }
+
+      &-img {
+        width: 9rem;
+        height: 9rem;
+        fill: $white;
+      }
+    }
+
     &__card {
       width: 50rem;
+      top: 7.5rem;
+      position: absolute;
 
       &--style {
         border-radius: 1rem;
@@ -27,6 +62,7 @@
           font-weight: 300;
           text-align: center;
           color: $main-grey;
+          margin-top: 51px !important;
         }
 
         &-form {
@@ -48,4 +84,5 @@
       }
     }
   }
+
 }
