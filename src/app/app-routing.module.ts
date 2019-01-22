@@ -11,11 +11,17 @@ import { UsersProfileComponent } from './users-profile/users-profile.component';
 import { SearchInputComponent } from './search-input/search-input.component';
 import { LoginLeavePortalComponent } from './auth/login-leave-portal/login-leave-portal.component';
 import { LoginTravelPortalComponent } from './auth/login-travel-portal/login-travel-portal.component';
+import { LoginTravelApprovalPortalComponent } from './auth/login-travel-approval-portal/login-travel-approval-portal.component';
+import { LoginMarchApprovalPortalComponent } from './auth/login-march-approval-portal/login-march-approval-portal.component';
+import { LoginNonmarchApprovalPortalComponent } from './auth/login-nonmarch-approval-portal/login-nonmarch-approval-portal.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent },
   {path: 'login/leave', component: LoginLeavePortalComponent },
-  {path: 'login/travel', component: LoginTravelPortalComponent }
+  {path: 'login/travel', component: LoginTravelPortalComponent },
+  {path: 'login/travelapp', component: LoginTravelApprovalPortalComponent},
+  {path: 'login/marchapp', component: LoginMarchApprovalPortalComponent },
+  {path: 'login/nonmarch', component: LoginNonmarchApprovalPortalComponent }
 ];
 
 @NgModule({
@@ -25,7 +31,10 @@ const routes: Routes = [
     UsersProfileComponent,
     SearchInputComponent,
     LoginLeavePortalComponent,
-    LoginTravelPortalComponent
+    LoginTravelPortalComponent,
+    LoginTravelApprovalPortalComponent,
+    LoginMarchApprovalPortalComponent,
+    LoginNonmarchApprovalPortalComponent
   ],
   imports: [
     BrowserModule,
