@@ -13,6 +13,13 @@
     color: $main-grey;
     justify-content: center;
     align-items: center;
+    flex: 0 0 80%;
+    position: relative;
+
+    &--text {
+      position: absolute;
+      right: 17rem;
+    }
   }
 
 }
