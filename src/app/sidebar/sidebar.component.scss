@@ -81,7 +81,6 @@
   &_item {
     position: relative;
     display: flex;
-    //overflow: hidden;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -137,14 +136,36 @@
       margin-right: 2rem;
     }
 
-    &:hover,
-    &:active,
-    &:focus > &--icon {
+    &:hover > &--icon {
       fill: $dark-yellow;
     }
 
     &--text {
       width: 10rem;
+    }
+  }
+}
+
+.active {
+  color: $dark-yellow;
+  background-color: $light-grey2;
+  width: 125%;
+  box-shadow: 8px 1px 47px -5px rgba(0,0,0,0.75);
+  outline:0;
+
+  & .sideMenu_item--icon {
+    fill: $dark-yellow;
+  }
+
+  & .sideMenu_item--addOn {
+    left: 8rem;
+
+    @media (max-width: $bp-large) {
+      left: 6.5rem;
+    }
+
+    @media (max-width: $bp-medium) {
+      left: 6rem;
     }
   }
 }
