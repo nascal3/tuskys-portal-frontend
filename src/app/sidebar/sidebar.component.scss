@@ -29,6 +29,13 @@
 
     &--image {
       max-width: 100%;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+      }
     }
   }
 
