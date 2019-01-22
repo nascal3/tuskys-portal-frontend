@@ -12,7 +12,7 @@ export class LoginLeavePortalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.leavePortalLoaded = "Leave";
+    this.leavePortalLoaded = "leave";
   }
 
   onSubmit(f: NgForm) {
