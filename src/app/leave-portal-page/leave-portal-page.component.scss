@@ -1,0 +1,24 @@
+@import "../sass/main";
+
+.mainSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  top: 7rem;
+  min-height: 75%;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &__card {
+    //width: 100%;
+    //top: 7.5rem;
+    //position: absolute;
+
+    &--style {
+      border-radius: 1rem;
+    }
+  }
+}
