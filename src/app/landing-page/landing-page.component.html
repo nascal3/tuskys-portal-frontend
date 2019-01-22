@@ -4,7 +4,7 @@
 <section class="mainSection">
   <div class="mainSection_card">
     <mat-card class="mainSection_card--style">
-      <div class="mainSection_card--iconBorder">
+      <div routerLink="/login/leave" class="mainSection_card--iconBorder">
         <svg class="mainSection_card--icon">
           <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-pool"></use>
         </svg>
@@ -28,7 +28,7 @@
           <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-add_circle"></use>
         </svg>
       </div>
-      <div class="mainSection_card--iconBorder">
+      <div routerLink="/login/travel" class="mainSection_card--iconBorder">
         <svg class="mainSection_card--icon">
           <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-airport_shuttle"></use>
         </svg>
@@ -38,7 +38,7 @@
         <span>Travel & cash Exp application</span>
       </div>
 
-      <button routerLink="/login/leave" class="mainSection_card--button" mat-raised-button color="accent">
+      <button routerLink="/login/travel" class="mainSection_card--button" mat-raised-button color="accent">
         Click to login
       </button>
     </mat-card>
