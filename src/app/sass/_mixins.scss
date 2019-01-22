@@ -1,0 +1,51 @@
+
+//====== LOGIN PORTAL PAGE ======
+@mixin loginMainSection {
+  .mainSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+    top: 7rem;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &__card {
+      width: 50rem;
+
+      &--style {
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-header {
+          font-weight: 300;
+          text-align: center;
+          color: $main-grey;
+        }
+
+        &-form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          font-size: 1.4rem;
+          color: $main-grey;
+          width: 29rem;
+        }
+
+        &-formField {
+          margin: 1.5rem 0 2rem 0;
+        }
+      }
+
+      &--button {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+}
