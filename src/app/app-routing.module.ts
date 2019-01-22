@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from "@angular/common";
+import { FormsModule} from "@angular/forms";
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialModule } from "./material.module";
 
@@ -22,8 +25,11 @@ const routes: Routes = [
     LoginLeavePortalComponent
   ],
   imports: [
+    BrowserModule,
+    CommonModule,
     RouterModule.forRoot(routes),
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   exports: [RouterModule]
 })
