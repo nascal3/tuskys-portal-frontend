@@ -1,0 +1,26 @@
+<section class="topSection">
+  <app-main-top-section></app-main-top-section>
+</section>
+<section class="mainSection">
+  <div class="mainSection__card">
+    <mat-card class="mainSection__card--style">
+      <mat-card-header class="mainSection__card--style-header">
+        <mat-card-title>Travel & cash <br> Exp application Portal</mat-card-title>
+      </mat-card-header>
+      <form class="mainSection__card--style-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field class="mainSection__card--style-formField">
+          <input matInput name="username" ngModel placeholder="Username" #usernameInput="ngModel" required>
+          <mat-error *ngIf="usernameInput.hasError('required')">Insert your username</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mainSection__card--style-formField">
+          <input type="password" name="password" ngModel="" matInput placeholder="Password" #passwordInput="ngModel" required>
+          <mat-error *ngIf="passwordInput.hasError('required')">Insert your password</mat-error>
+        </mat-form-field>
+
+        <button class="mainSection__card--button" type="submit" mat-raised-button color="accent">Login</button>
+
+      </form>
+    </mat-card>
+  </div>
+</section>

@@ -10,10 +10,12 @@ import {LandingPageComponent} from "./landing-page/landing-page.component";
 import { UsersProfileComponent } from './users-profile/users-profile.component';
 import { SearchInputComponent } from './search-input/search-input.component';
 import { LoginLeavePortalComponent } from './auth/login-leave-portal/login-leave-portal.component';
+import { LoginTravelPortalComponent } from './auth/login-travel-portal/login-travel-portal.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent },
-  {path: 'login/leave', component: LoginLeavePortalComponent }
+  {path: 'login/leave', component: LoginLeavePortalComponent },
+  {path: 'login/travel', component: LoginTravelPortalComponent }
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const routes: Routes = [
     MainTopSectionComponent,
     UsersProfileComponent,
     SearchInputComponent,
-    LoginLeavePortalComponent
+    LoginLeavePortalComponent,
+    LoginTravelPortalComponent
   ],
   imports: [
     BrowserModule,
