@@ -6,7 +6,6 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./main-top-section.component.scss']
 })
 export class MainTopSectionComponent implements OnInit {
-  @Input() portalName: string;
 
   constructor() {}
 
