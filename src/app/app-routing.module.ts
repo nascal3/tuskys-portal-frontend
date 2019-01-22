@@ -14,6 +14,7 @@ import { LoginTravelPortalComponent } from './auth/login-travel-portal/login-tra
 import { LoginTravelApprovalPortalComponent } from './auth/login-travel-approval-portal/login-travel-approval-portal.component';
 import { LoginMarchApprovalPortalComponent } from './auth/login-march-approval-portal/login-march-approval-portal.component';
 import { LoginNonmarchApprovalPortalComponent } from './auth/login-nonmarch-approval-portal/login-nonmarch-approval-portal.component';
+import { LeavePortalPageComponent } from './leave-portal-page/leave-portal-page.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'login/travel', component: LoginTravelPortalComponent },
   {path: 'login/travelapp', component: LoginTravelApprovalPortalComponent},
   {path: 'login/marchapp', component: LoginMarchApprovalPortalComponent },
-  {path: 'login/nonmarch', component: LoginNonmarchApprovalPortalComponent }
+  {path: 'login/nonmarch', component: LoginNonmarchApprovalPortalComponent },
+  {path: 'leave', component: LeavePortalPageComponent }
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const routes: Routes = [
     LoginTravelPortalComponent,
     LoginTravelApprovalPortalComponent,
     LoginMarchApprovalPortalComponent,
-    LoginNonmarchApprovalPortalComponent
+    LoginNonmarchApprovalPortalComponent,
+    LeavePortalPageComponent
   ],
   imports: [
     BrowserModule,
