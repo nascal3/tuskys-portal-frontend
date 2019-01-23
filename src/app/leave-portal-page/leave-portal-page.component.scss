@@ -7,18 +7,56 @@
   flex-wrap: wrap;
   align-content: space-between;
   top: 7rem;
-  min-height: 75%;
+  max-height: 91.6%;
   padding: 2rem 1.5rem;
-  overflow-y: auto;
-  overflow-x: hidden;
+
+  .mat-card-header {
+    display: flex;
+    justify-content: center;
+
+    .mat-card-title {
+      font-weight: 300;
+    }
+  }
 
   &__card {
-    //width: 100%;
-    //top: 7.5rem;
-    //position: absolute;
 
     &--style {
       border-radius: 1rem;
+      max-height: 73rem;
+    }
+
+    &--table {
+      //border: solid 1px red;
+
+      &-header {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.4rem;
+        color: $main-grey;
+        align-items: center;
+      }
+
+      &-filterIcon {
+        fill: $main-grey;
+        width: 2.3rem;
+        height: 2.3rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+      }
+
+      &-filter {
+        margin-right: 8rem;
+      }
+
+      &-body {
+        overflow: auto;
+        max-height: 59.5rem;
+
+        table {
+          width: 100%;
+        }
+      }
     }
   }
 }
