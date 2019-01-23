@@ -15,6 +15,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // (1 rem = 10px)  10px/16px
+  height:100%;
 
   //@media only screen and (max-width: $bp-large) {
   //  font-size: 50%;
@@ -28,12 +29,14 @@ html {
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background:linear-gradient(to bottom, $light-background-yellow, $white) no-repeat;
+    background-color: $white;
+    //background:linear-gradient(to bottom, $light-background-yellow, $white) no-repeat;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: $main-grey;
+    border-radius: 1rem;
   }
 
   /* Handle on hover */
@@ -47,7 +50,7 @@ body {
   line-height: 1.6;
   background-color: $white;
   //background: linear-gradient(to right bottom, $light-background-yellow, $white) no-repeat;
-  min-height: 100vh;
+
 }
 
 
