@@ -31,6 +31,16 @@
         font-size: 1.4rem;
         color: $main-grey;
         align-items: center;
+        justify-content: space-between;
+
+        & div {
+          display: flex;
+          align-items: center;
+        }
+
+        & button {
+          color: $main-grey;
+        }
       }
 
       &-filterIcon {
@@ -39,6 +49,12 @@
         height: 2.3rem;
         margin-right: 1rem;
         margin-left: 1rem;
+      }
+
+      &-btnIcon {
+        fill: $main-grey;
+        width: 2.3rem;
+        height: 2.3rem;
       }
 
       &-filter {

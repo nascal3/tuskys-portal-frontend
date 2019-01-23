@@ -36,9 +36,9 @@ export class LeavePortalPageComponent implements OnInit {
 
   ngOnInit() {
     this.leaveSates = [
-      {value: 'pizza-1', viewValue: 'Pizza'},
-      {value: 'tacos-2', viewValue: 'Tacos'},
-      {value: 'approved', viewValue: 'Approved'},
+      {value: 'pending', viewValue: 'Pending Approval'},
+      {value: 'approved', viewValue: 'Approved Leaves'},
+      {value: 'open', viewValue: 'Open Leaves'}
     ];
 
     this.dataSource.sort = this.sort;

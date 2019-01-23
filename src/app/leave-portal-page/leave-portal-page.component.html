@@ -10,19 +10,27 @@
 
       <div class="mainSection__card--table">
         <div class="mainSection__card--table-header">
-          <svg class="mainSection__card--table-filterIcon">
-            <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-funnel"></use>
-          </svg>
+          <div>
+            <svg class="mainSection__card--table-filterIcon">
+              <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-funnel"></use>
+            </svg>
+            <mat-form-field class="mainSection__card--table-filter">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter table...">
+            </mat-form-field>
+          </div>
           <mat-form-field class="mainSection__card--table-filter">
-            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter table...">
-          </mat-form-field>
-          <mat-form-field>
             <mat-select placeholder="Leave application state">
               <mat-option *ngFor="let leave of leaveSates" [value]="leave.value">
                 {{leave.viewValue}}
               </mat-option>
             </mat-select>
           </mat-form-field>
+          <button mat-raised-button color="accent">
+            <svg class="mainSection__card--table-btnIcon">
+              <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-add"></use>
+            </svg>
+            Apply Leave
+          </button>
         </div>
 
         <div class="mainSection__card--table-body">
