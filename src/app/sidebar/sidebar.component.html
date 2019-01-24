@@ -5,13 +5,13 @@
     <hr class="sidebar_logo--line">
     
     <ul class="sideMenu">
-      <li class="sideMenu_item" routerLink="/login/leave" routerLinkActive="active">
+      <li class="sideMenu_item" routerLink="/login/leave" routerLinkActive="active" [ngClass]="{active: leave}">
         <svg class="sideMenu_item--icon">
           <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-pool"></use>
         </svg>
         <span class="sideMenu_item--text">Leave portal</span>
       </li>
-      <li class="sideMenu_item" routerLink="/login/travel" routerLinkActive="active">
+      <li class="sideMenu_item" routerLink="/login/travel" routerLinkActive="active" [ngClass]="{active: travelApp}">
         <div class="sideMenu_item--addOn">
           <svg class="sideMenu_item--addOn-icon">
             <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-add_circle"></use>
