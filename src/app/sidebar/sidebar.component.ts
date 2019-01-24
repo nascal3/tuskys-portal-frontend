@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   activePage: PageModel;
   travelApp: boolean = false;
   leave: boolean = false;
+  travelExp: boolean = false;
   @Select(PageState.getActiveRoute) page$: Observable<PageModel>;
 
   constructor() {
@@ -31,6 +32,8 @@ export class SidebarComponent implements OnInit {
       this.travelApp = true;
     } else if (route === '/leave') {
       this.leave = true;
+    } else if (route === '/travelexp') {
+      this.travelExp = true;
     }
 
   }
