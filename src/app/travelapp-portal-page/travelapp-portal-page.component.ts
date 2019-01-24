@@ -11,6 +11,7 @@ import {AddPageRoute} from "../actions/page.actions";
 export class TravelappPortalPageComponent implements OnInit {
 
   constructor(private store: Store, private router: Router) {
+    // ADD ACTIVE ROUTE TO STATE
     this.store.dispatch(new AddPageRoute({page: this.router.url}));
   }
 
