@@ -1,5 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import { Store } from '@ngxs/store';
+import {Router} from "@angular/router";
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {AddPageRoute} from "../actions/page.actions";
 
 @Component({
   selector: 'app-leave-portal-page',
@@ -32,7 +35,10 @@ export class LeavePortalPageComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(private router: Router, private store: Store) {
+   // ADD ACTIVE ROUTE TO STATE
+   this.store.dispatch(new AddPageRoute({page: this.router.url}));
+  }
 
   ngOnInit() {
     this.leaveSates = [
@@ -45,11 +51,8 @@ export class LeavePortalPageComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
 
 }

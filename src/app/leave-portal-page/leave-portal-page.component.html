@@ -19,7 +19,7 @@
             </mat-form-field>
           </div>
           <mat-form-field class="mainSection__card--table-filter">
-            <mat-select placeholder="Leave application state">
+            <mat-select placeholder="Leave application states">
               <mat-option *ngFor="let leave of leaveSates" [value]="leave.value">
                 {{leave.viewValue}}
               </mat-option>
