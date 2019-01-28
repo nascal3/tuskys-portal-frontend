@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-login-travel-portal',
@@ -12,6 +13,10 @@ export class LoginTravelPortalComponent implements OnInit {
 
   ngOnInit() {
     this.travelPortalLoaded = "travel exp application";
+  }
+
+  onSubmit(f: NgForm) {
+    console.log(f);
   }
 
 }
