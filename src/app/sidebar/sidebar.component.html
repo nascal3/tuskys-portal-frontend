@@ -33,7 +33,7 @@
         </svg>
         <span class="sideMenu_item--text">Travel & cash <br> Exp approval</span>
       </li>
-      <li class="sideMenu_item" routerLink="/login/marchapp" routerLinkActive="active">
+      <li class="sideMenu_item" routerLink="/login/marchapp" routerLinkActive="active" [ngClass]="{active: marchapp}">
         <div class="sideMenu_item--addOn">
           <svg class="sideMenu_item--addOn-icon">
             <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-check_circle"></use>
@@ -44,7 +44,7 @@
         </svg>
         <span class="sideMenu_item--text">Merchandise Approval</span>
       </li>
-      <li class="sideMenu_item" routerLink="/login/nonmarch" routerLinkActive="active">
+      <li class="sideMenu_item" routerLink="/login/nonmarch" routerLinkActive="active" [ngClass]="{active: nonmarch}">
         <div class="sideMenu_item--addOn">
           <svg class="sideMenu_item--addOn-icon">
             <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-check_circle"></use>

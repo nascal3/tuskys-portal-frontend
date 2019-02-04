@@ -15,6 +15,8 @@ export class SidebarComponent implements OnInit {
   travelApp: boolean = false;
   leave: boolean = false;
   travelExp: boolean = false;
+  marchapp: boolean = false;
+  nonmarch: boolean = false;
   @Select(PageState.getActiveRoute) page$: Observable<PageModel>;
 
   constructor() {
@@ -28,12 +30,16 @@ export class SidebarComponent implements OnInit {
   }
 
   selectTabHighlight(route) {
-    if (route === '/travel') {
+    if (route === '/leave') {
       this.travelApp = true;
-    } else if (route === '/leave') {
+    } else if (route === '/travel') {
       this.leave = true;
-    } else if (route === '/travelexp') {
+    } else if (route === '/travelapp') {
       this.travelExp = true;
+    } else if (route === '/marchapp') {
+      this.marchapp = true;
+    } else if (route === '/nonmarch') {
+      this.nonmarch = true;
     }
 
   }
