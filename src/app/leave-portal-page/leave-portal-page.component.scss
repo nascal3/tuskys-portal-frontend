@@ -1,5 +1,9 @@
 @import "../sass/main";
 
+.fixend {
+  justify-content: flex-end !important;
+}
+
 .mainSection {
   display: flex;
   flex-direction: column;

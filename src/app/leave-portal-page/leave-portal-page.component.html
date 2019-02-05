@@ -9,8 +9,8 @@
       </mat-card-header>
 
       <div class="mainSection__card--table">
-        <div class="mainSection__card--table-header">
-          <div>
+        <div class="mainSection__card--table-header" [ngClass]="{ fixend : !hideSection }">
+          <div *ngIf="hideSection">
             <svg class="mainSection__card--table-filterIcon">
               <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-funnel"></use>
             </svg>
@@ -18,22 +18,26 @@
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter table...">
             </mat-form-field>
           </div>
-          <mat-form-field class="mainSection__card--table-filter">
+          <mat-form-field class="mainSection__card--table-filter" *ngIf="hideSection">
             <mat-select placeholder="Leave application states">
               <mat-option *ngFor="let leave of leaveSates" [value]="leave.value">
                 {{leave.viewValue}}
               </mat-option>
             </mat-select>
           </mat-form-field>
-          <button mat-raised-button color="accent">
-            <svg class="mainSection__card--table-btnIcon">
+          <button mat-raised-button color="accent" (click)="showFrom()">
+            <svg class="mainSection__card--table-btnIcon" *ngIf="hideSection">
               <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-add"></use>
             </svg>
-            Apply Leave
+            <svg class="mainSection__card--table-btnIcon" *ngIf="!hideSection">
+              <use xlink:href="../../assets/icons/dashboard-icons.svg#icon-view_list"></use>
+            </svg>
+            <span *ngIf="hideSection">Apply Leave</span>
+            <span *ngIf="!hideSection">Show Leave States</span>
           </button>
         </div>
 
-        <div class="mainSection__card--table-body">
+        <div class="mainSection__card--table-body" *ngIf="hideSection">
           <table mat-table [dataSource]="dataSource" matSort>
 
             <!-- Position Column -->
@@ -76,6 +80,9 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+        <div class="mainSection__card--table-form" *ngIf="!hideSection">
+          application form here
         </div>
       </div>
     </mat-card>

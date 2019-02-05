@@ -11,6 +11,7 @@ import {AddPageRoute} from "../actions/page.actions";
 })
 export class LeavePortalPageComponent implements OnInit {
 
+  hideSection: boolean = true;
   leaveSates: any[] = [];
   tableData = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', col2: 1.0079, symbol2: 'H'},
@@ -53,6 +54,10 @@ export class LeavePortalPageComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  showFrom() {
+    this.hideSection = !this.hideSection;
   }
 
 }
