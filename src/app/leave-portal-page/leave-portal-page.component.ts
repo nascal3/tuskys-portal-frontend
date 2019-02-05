@@ -13,6 +13,9 @@ export class LeavePortalPageComponent implements OnInit {
 
   hideSection: boolean = true;
   leaveSates: any[] = [];
+  leaveReasons: any[] = [];
+  minDate = new Date(2000, 0, 1);
+  maxDate = new Date(2020, 0, 1);
   tableData = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', col2: 1.0079, symbol2: 'H'},
     {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', col2: 1.0079, symbol2: 'H'},
@@ -46,6 +49,16 @@ export class LeavePortalPageComponent implements OnInit {
       {value: 'pending', viewValue: 'Pending Approval'},
       {value: 'approved', viewValue: 'Approved Leaves'},
       {value: 'open', viewValue: 'Open Leaves'}
+    ];
+
+    this.leaveReasons = [
+      {value: 'Annual leave', viewValue: 'Annual leave'},
+      {value: 'Sick leaves', viewValue: 'Sick leaves'},
+      {value: 'Maternity leave', viewValue: 'Maternity leave'},
+      {value: 'Paternity leave', viewValue: 'Paternity leave'},
+      {value: 'Absence leave', viewValue: 'Absence leave'},
+      {value: 'Compensatory leave', viewValue: 'Compensatory leave'},
+      {value: 'Compassionate leave', viewValue: 'Compassionate leave'}
     ];
 
     this.dataSource.sort = this.sort;

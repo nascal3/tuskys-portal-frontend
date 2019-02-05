@@ -78,6 +78,19 @@
           margin-bottom: 20px;
         }
       }
+
+      &-form {
+        margin-top: 1.8rem;
+        //border: solid 1px;
+      }
+    }
+
+    &-formTop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 1.4rem;
     }
   }
 }
