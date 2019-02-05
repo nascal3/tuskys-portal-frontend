@@ -105,7 +105,22 @@
               </mat-form-field>
             </section>
             <section class="mainSection__card-formBottom">
-              bottom form section
+              <div class="mainSection__card-formBottom--left">
+                <mat-form-field>
+                  <span matPrefix>+254 &nbsp;</span>
+                  <input type="number" matInput placeholder="Enter contact number">
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-hint align="start"><strong>Attach relevant files</strong> </mat-hint>
+                  <input type="number" matInput placeholder="Attach file">
+                </mat-form-field>
+              </div>
+              <div class="mainSection__card-formBottom--right">
+                <mat-form-field>
+                  <textarea matInput placeholder="Reason for leave" rows="15"></textarea>
+                </mat-form-field>
+              </div>
             </section>
           </form>
         </div>
