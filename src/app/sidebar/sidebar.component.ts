@@ -31,9 +31,9 @@ export class SidebarComponent implements OnInit {
 
   selectTabHighlight(route) {
     if (route === '/leave') {
-      this.travelApp = true;
-    } else if (route === '/travel') {
       this.leave = true;
+    } else if (route === '/travel') {
+      this.travelApp = true;
     } else if (route === '/travelapp') {
       this.travelExp = true;
     } else if (route === '/marchapp') {
