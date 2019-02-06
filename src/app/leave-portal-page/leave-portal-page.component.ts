@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { Store } from '@ngxs/store';
 import {Router} from "@angular/router";
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
@@ -9,13 +9,11 @@ import {AddPageRoute} from "../actions/page.actions";
   templateUrl: './leave-portal-page.component.html',
   styleUrls: ['./leave-portal-page.component.scss']
 })
-export class LeavePortalPageComponent implements OnInit {
+export class LeavePortalPageComponent implements OnInit, AfterViewInit {
 
   hideSection: boolean = true;
   leaveSates: any[] = [];
   leaveReasons: any[] = [];
-  minDate = new Date(2000, 0, 1);
-  maxDate = new Date(2020, 0, 1);
   attachment: boolean = false;
   tableData = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', col2: 1.0079, symbol2: 'H'},
@@ -39,10 +37,21 @@ export class LeavePortalPageComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  endDate: any;
+  startDate: any;
+  disableDate: boolean = true;
+  currentDate = new Date(Date.now());
+  minDate1 = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDate());
+  minDate2 = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDate());
 
   constructor(private router: Router, private store: Store) {
    // ADD ACTIVE ROUTE TO STATE
    this.store.dispatch(new AddPageRoute({page: this.router.url}));
+  }
+
+  dateChanged(event) {
+    this.disableDate = false;
+    this.minDate2 = new Date(event);
   }
 
   ngOnInit() {
@@ -61,7 +70,9 @@ export class LeavePortalPageComponent implements OnInit {
       {value: 'Compensatory leave', viewValue: 'Compensatory leave'},
       {value: 'Compassionate leave', viewValue: 'Compassionate leave'}
     ];
+  }
 
+  ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
