@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule} from "@angular/forms";
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialModule } from "./material.module";
+import {NgxMaskModule} from 'ngx-mask'
 
 import { MainTopSectionComponent } from './main-top-section/main-top-section.component';
 import {LandingPageComponent} from "./landing-page/landing-page.component";
@@ -56,7 +57,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes),
     MaterialModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   exports: [RouterModule]
 })
