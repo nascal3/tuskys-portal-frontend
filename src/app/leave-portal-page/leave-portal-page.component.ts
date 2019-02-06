@@ -16,6 +16,7 @@ export class LeavePortalPageComponent implements OnInit {
   leaveReasons: any[] = [];
   minDate = new Date(2000, 0, 1);
   maxDate = new Date(2020, 0, 1);
+  attachment: boolean = false;
   tableData = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', col2: 1.0079, symbol2: 'H'},
     {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', col2: 1.0079, symbol2: 'H'},

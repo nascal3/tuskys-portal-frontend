@@ -37,7 +37,7 @@
           </button>
         </div>
 
-        <div class="mainSection__card--table-body" *ngIf="hideSection">
+        <div class="mainSection__card--table-body animated" *ngIf="hideSection" [ngClass]="{'zoomInDown': hideSection}">
           <table mat-table [dataSource]="dataSource" matSort>
 
             <!-- Position Column -->
@@ -81,7 +81,7 @@
           </table>
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
         </div>
-        <div class="mainSection__card--table-form" *ngIf="!hideSection">
+        <div class="mainSection__card--table-form animated" *ngIf="!hideSection" [ngClass]="{'zoomInDown': !hideSection}">
           <form>
             <section class="mainSection__card-formTop">
               <mat-form-field>
@@ -112,8 +112,10 @@
                   <input type="number" matInput placeholder="Enter contact number">
                 </mat-form-field>
 
-                <mat-slide-toggle color="warn">Attach file</mat-slide-toggle>
-                <input type="file" placeholder="Attach file">
+                <mat-slide-toggle [(ngModel)]="attachment" [ngModelOptions]="{standalone: true}" color="warn">Attach file</mat-slide-toggle>
+                <div class="animated" [ngClass]="{'fadeInDown': attachment, 'fadeOutUp': !attachment }">
+                  <input type="file" placeholder="Attach file"  >
+                </div>
               </div>
               <div class="mainSection__card-formBottom--right">
                 <mat-form-field>
