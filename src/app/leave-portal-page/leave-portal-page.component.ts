@@ -3,6 +3,7 @@ import { Store } from '@ngxs/store';
 import {Router} from "@angular/router";
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {AddPageRoute} from "../actions/page.actions";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-leave-portal-page',
@@ -43,6 +44,9 @@ export class LeavePortalPageComponent implements OnInit, AfterViewInit {
   currentDate = new Date(Date.now());
   minDate1 = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDate());
   minDate2 = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), this.currentDate.getDate());
+  leaveType: string;
+  reason: string;
+  phoneNumber: number;
 
   constructor(private router: Router, private store: Store) {
    // ADD ACTIVE ROUTE TO STATE
@@ -63,7 +67,7 @@ export class LeavePortalPageComponent implements OnInit, AfterViewInit {
 
     this.leaveReasons = [
       {value: 'Annual leave', viewValue: 'Annual leave'},
-      {value: 'Sick leaves', viewValue: 'Sick leaves'},
+      {value: 'Sick leave', viewValue: 'Sick leave'},
       {value: 'Maternity leave', viewValue: 'Maternity leave'},
       {value: 'Paternity leave', viewValue: 'Paternity leave'},
       {value: 'Absence leave', viewValue: 'Absence leave'},
@@ -85,4 +89,7 @@ export class LeavePortalPageComponent implements OnInit, AfterViewInit {
     this.hideSection = !this.hideSection;
   }
 
+  onSubmit(f: NgForm) {
+    console.log(f.value);
+  }
 }

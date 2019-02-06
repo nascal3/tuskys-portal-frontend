@@ -38,6 +38,7 @@
         </div>
 
         <div class="mainSection__card--table-body animated" *ngIf="hideSection" [ngClass]="{'zoomInDown': hideSection}">
+          <!--=== START OF LEAVE DATA TABLE ===-->
           <table mat-table [dataSource]="dataSource" matSort>
 
             <!-- Position Column -->
@@ -80,36 +81,39 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          <!--=== END OF LEAVE DATA TABLE ===-->
         </div>
         <div class="mainSection__card--table-form animated" *ngIf="!hideSection" [ngClass]="{'zoomInDown': !hideSection}">
           <!--=== START OF LEAVE APPLICATION FORM ===-->
-          <form>
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <section class="mainSection__card-formTop">
               <mat-form-field>
-                <mat-select placeholder="Leave type">
-                  <mat-option *ngFor="let reason of leaveReasons" [value]="reason.value">
+                <mat-select placeholder="Leave type" #leaveTypeDrop="ngModel" name="leaveType" [(ngModel)]="leaveType" required>
+                  <mat-option *ngFor="let reason of leaveReasons" [value]="reason.value" >
                     {{reason.viewValue}}
                   </mat-option>
                 </mat-select>
+                <mat-error *ngIf="leaveTypeDrop.hasError('required')">Select a leave type!</mat-error>
               </mat-form-field>
 
               <mat-form-field class="example-full-width">
-                <input matInput [min]="minDate1" [matDatepicker]="picker"  [(ngModel)]="startDate" (ngModelChange)="dateChanged($event)" name="startDate" placeholder="Choose start date" disabled required>
+                <input matInput [min]="minDate1" [matDatepicker]="picker" #startingDate="ngModel" [(ngModel)]="startDate" (ngModelChange)="dateChanged($event)" name="startDate" placeholder="Choose start date" readonly required>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker disabled="false"></mat-datepicker>
+                <mat-error *ngIf="startingDate.hasError('required')">Insert starting date!</mat-error>
               </mat-form-field>
               <mat-form-field class="example-full-width">
-                <input matInput [min]="minDate2" [matDatepicker]="picker2" [(ngModel)]="endDate" name="endDate" placeholder="Choose end date" disabled required>
+                <input matInput [min]="minDate2" [matDatepicker]="picker2" #endingDate="ngModel" [(ngModel)]="endDate" name="endDate" placeholder="Choose end date" readonly required>
                 <mat-datepicker-toggle matSuffix [for]="picker2" [disabled]="disableDate"></mat-datepicker-toggle>
                 <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+                <mat-error *ngIf="endingDate.hasError('required')">Insert ending date!</mat-error>
               </mat-form-field>
             </section>
             <mat-divider [inset]="true"></mat-divider>
             <section class="mainSection__card-formBottom">
               <div class="mainSection__card-formBottom--left">
                 <mat-form-field>
-                  <span matPrefix>+254 &nbsp;</span>
-                  <input type="number" matInput placeholder="Enter contact number">
+                  <input type="text" prefix="+254 " mask="(000) 000 000" matInput placeholder="Enter contact number" name="phoneNumber" [ngModel]="phoneNumber">
                 </mat-form-field>
 
                 <mat-slide-toggle [(ngModel)]="attachment" [ngModelOptions]="{standalone: true}" color="warn">Attach file</mat-slide-toggle>
@@ -118,13 +122,15 @@
                 </div>
               </div>
               <div class="mainSection__card-formBottom--right">
-                <mat-form-field>
-                  <textarea matInput placeholder="Reason for leave" rows="7"></textarea>
+                <mat-form-field *ngIf="leaveType !== 'Annual leave'" >
+                  <textarea matInput placeholder="Reason for leave" rows="7" name="reason" #leaveReason="ngModel" [ngModel]="reason" required></textarea>
+                  <mat-error *ngIf="leaveReason.hasError('required')">Insert reason for leave!</mat-error>
                 </mat-form-field>
               </div>
             </section>
             <button type="submit" mat-raised-button>Apply leave</button>
           </form>
+          <!--=== END OF LEAVE APPLICATION FORM ===-->
         </div>
       </div>
     </mat-card>

@@ -99,6 +99,7 @@
       flex-wrap: wrap;
       font-size: 1.4rem;
       margin-bottom: 1.5rem;
+      color: $main-grey;
     }
 
     &-formBottom {
@@ -108,7 +109,8 @@
       justify-content: space-between;
       flex-wrap: wrap;
       font-size: 1.4rem;
-      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+      color: $main-grey;
 
       &--left {
         display: flex;
