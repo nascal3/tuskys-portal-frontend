@@ -47,6 +47,7 @@ export class LeavePortalPageComponent implements OnInit, AfterViewInit {
   leaveType: string;
   reason: string;
   phoneNumber: number;
+  attachmentDoc: any;
 
   constructor(private router: Router, private store: Store) {
    // ADD ACTIVE ROUTE TO STATE
@@ -90,6 +91,8 @@ export class LeavePortalPageComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value);
+    if (!f.invalid) {
+      console.log(f.value);
+    }
   }
 }

@@ -117,8 +117,9 @@
                 </mat-form-field>
 
                 <mat-slide-toggle [(ngModel)]="attachment" [ngModelOptions]="{standalone: true}" color="warn">Attach file</mat-slide-toggle>
-                <div class="animated" [ngClass]="{'fadeInDown': attachment, 'fadeOutUp': !attachment }">
-                  <input type="file" placeholder="Attach file"  >
+                <div class="fileAttachment animated" [ngClass]="{'fadeInDown': attachment, 'fadeOutUp': !attachment }" *ngIf="attachment">
+                  <input type="file" placeholder="Attach file" #attachmentFile="ngModel" name="attachmentDoc" [(ngModel)]="attachmentDoc" required>
+                  <mat-error *ngIf="attachmentFile.hasError('required')">Please attach a document!</mat-error>
                 </div>
               </div>
               <div class="mainSection__card-formBottom--right">
@@ -128,7 +129,7 @@
                 </mat-form-field>
               </div>
             </section>
-            <button type="submit" mat-raised-button>Apply leave</button>
+            <button type="submit" mat-raised-button >Apply leave</button>
           </form>
           <!--=== END OF LEAVE APPLICATION FORM ===-->
         </div>
